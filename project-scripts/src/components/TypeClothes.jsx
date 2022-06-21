@@ -4,10 +4,10 @@ import {
 
 import styled from 'styled-components/macro';
 
-function TypeClothes({text, link, setTitle}) {
+function TypeClothes({text, link, setTitle, type}) {
 
     return (
-        <ChooseClothes onClick={() => setTitle(text)} to={link}>
+        <ChooseClothes onClick={() => setTitle(text)} state={{type}} to={link}>
             <span>{text}</span>
         </ChooseClothes>
     );

@@ -2,38 +2,11 @@ import { connect } from 'react-redux';
 import styled from 'styled-components/macro';
 import HeaderText from '../components/HeaderText';
 import Steps from '../components/steps/index';
-
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { MenAndWomen, Men, Women } from "../constants/tables";
 import { setCurrentGroupCloth, setCloth, setCElement } from "../redux/actions";
 import { LinkBtn } from '../components/Btns';
-
-const data = {
-    "1": [{id: Math.random(), value: 1}, {id: Math.random(), value: 2}, {id: Math.random(), value: 4}, {id: Math.random(), value: 223,}, {id: Math.random(), value: 999,}],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1}, {id: Math.random(), value: 31, }, {id: Math.random(), value: 41, }, {id: Math.random(), value: 5988, }],
-    "3": [{id: Math.random(), value: 3}, {id: Math.random(), value: 3}, {id: Math.random(), value: 11, }, {id: Math.random(), value: 432, }, {id: Math.random(), value: 56,}],
-    "4": [{id: Math.random(), value: 4}, {id: Math.random(), value: 4}, {id: Math.random(), value: 31,}, {id: Math.random(), value: 1114,}, {id: Math.random(), value: 777,}],
-};
-
-const dataCElements = {
-    "1": [{id: Math.random(), value: 2.5}, {id: Math.random(), value: 2.3}, {id: Math.random(), value: 2.2}, {id: Math.random(), value: 1} ],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1.8}, {id: Math.random(), value: 1.7, }, {id: Math.random(), value: 0.8} ],
-    "3": [{id: Math.random(), value: 232}, {id: Math.random(), value: 1222}, {id: Math.random(), value: 333, }, {id: Math.random(), value: 111} ],
-    "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}, {id: Math.random(), value: 1.4, }, {id: Math.random(), value: 0.6} ],
-}
-
-const nameGroup = [
-    'Пальто, полупальто зимние (с подкладкой и утепляющей прокладкой)',
-    'Жакет зимний (с подкладкой и утепляющей прокладкой)',
-    'Смокинг',
-    'Пиджак без подкладки',
-    'Фрак, визитка'
-]
-
-const complicatingElements = [
-    'в плечевых изделиях (кроме комбинезона)',
-    'в поясных изделиях (брюках, юбке, полукомбинезоне) и комбинезоне',
-]
 
 const titles = [ '1', '2', '3', '4']
 
@@ -70,32 +43,30 @@ function TypesClothesStepOne({
     setCElement,
 }) {
 
+    const { state: { type } } = useLocation();
+    const [data, setDate] = useState({});
+
+    console.log(type);
+
+    useEffect(() => {
+        //MenAndWomen, Men, Women
+        switch(type){
+            case 1:
+                setDate(MenAndWomen);
+            break;
+            case 2:
+                setDate(Women);
+            break;
+            case 3:
+                setDate(Men);
+            break;
+        }
+    }, [type]);
+
     // if complicating elements is only one
     useEffect(() => {
-        if( complicatingElements.length < step ){
-            setCElement({data: currentGoup.CElements[step-1]});
-        }
     }, [step]);
 
-    const handleChooseGroup = (event) => {
-        const currentStep = event.target.getAttribute('data-step');
-
-        if(currentStep) {
-            setCurrentGroupCloth({
-                cloths: data[currentStep], 
-                CElements: dataCElements[currentStep], 
-                step: currentStep
-            });
-        };
-    }
-
-    const handleChooseCloth = (key, text) => {
-        setCloth({key, data: { ...currentGoup.cloths[key], text }})
-    }
-
-    const handleChooseComplicateElement = (key, text) => {
-        setCElement({key, data: { ...currentGoup.CElements[key], text }})
-    }
 
     return (
         <Wrapper>
@@ -103,6 +74,7 @@ function TypesClothesStepOne({
 
             <Header>Выберите группу ткани</Header>
             <Steps
+                clothes={data}
                 styles={{steps: stepsStyles, currentStep: currentStepStyles}}
                 titles={titles} 
                 link={'/types-clothes/step1/'}

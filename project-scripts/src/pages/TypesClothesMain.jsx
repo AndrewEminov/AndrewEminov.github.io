@@ -10,19 +10,22 @@ function TypesClothesMain({setTitleTypeClothes}) {
         <Wrapper>
             <HeaderText text={'Выберите один из типов одежды тип одежды:'} />
 
-            <TypeClothes 
+            <TypeClothes
+                type={1}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=1"}
+                link={"/types-clothes/step1"}
                 text={'Мужская и женская верхняя одежда'}
             />
-            <TypeClothes 
+            <TypeClothes
+                type={2}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=2"}
+                link={"/types-clothes/step1"}
                 text={'Женская легкая одежда'}
             />
-            <TypeClothes 
+            <TypeClothes
+                type={3}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=3"}
+                link={"/types-clothes/step1"}
                 text={'Мужская легкая одежда'}
             />
         </Wrapper>
