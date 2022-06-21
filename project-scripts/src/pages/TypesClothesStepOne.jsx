@@ -1,7 +1,5 @@
-import { connect } from 'react-redux';
 import styled from 'styled-components/macro';
 import Steps from '../components/steps/index';
-import { setCurrentGroupCloth, setCloth, setCElement } from "../redux/actions";
 import { LinkBtn } from '../components/Btns';
 
 const titles = [ '1', '2', '3', '4']
@@ -47,25 +45,8 @@ function TypesClothesStepOne() {
   }
 
 
-const mapStateToProps = (store) => {
-    return {
-        currentGoup: {
-            cloths: store.commonReducer.cloths, 
-            CElements: store.commonReducer.CElements,
-        },
-        step: store.commonReducer.step,
-        cloth: store.commonReducer.cloth,
-        CElement: store.commonReducer.CElement,
-    }
-  }
 
-  const mapDispatchToProps = {
-    setCurrentGroupCloth,
-    setCloth,
-    setCElement,
-  }
-
-export default connect(mapStateToProps, mapDispatchToProps)(TypesClothesStepOne);
+export default TypesClothesStepOne;
 
   const Header = styled.h1`
     font-size: 16px;

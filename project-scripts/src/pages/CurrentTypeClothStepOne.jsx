@@ -18,16 +18,7 @@ function CurrentTypeClothStepOne({
     title,
     table,
 }) {
-
     const { id } = useParams();
-
-    // if complicating elements is only one
-    useEffect(() => {
-        if(step && table.complicatingElements.length < step ){
-            currentGoup?.CElements && setCElement({data: currentGoup.CElements[step-1]});
-        }
-    }, [step]);
-
 
     useEffect(() => {
         setCurrentGroupCloth({
@@ -35,11 +26,17 @@ function CurrentTypeClothStepOne({
             CElements: table.dataCElements[id], 
             step: id
         });
-    }, [id]);
-    
 
+        // if complicating elements is only one
+        if(table.dataCElements[id] && !table.complicatingElements.length){
+            setCElement({key: 0, data: table.dataCElements[id][0]})
+        }else{
+            setCElement({key: null, data: {}})
+        }
+    }, []);
+    
     const handleChooseCloth = (key, text) => {
-        console.log(key, text, currentGoup);
+        // console.log(key, text, currentGoup);
 
         setCloth({key, data: { ...currentGoup.cloths[key], text }})
     }
@@ -64,7 +61,7 @@ function CurrentTypeClothStepOne({
                 </Cloth>
             ))}
 
-            {cloth.key !== null && table.complicatingElements.length > step && 
+            {!!(cloth.key !== null && table.complicatingElements.length) && 
             <>
                 <Header>Один усложняющий элемент</Header>
 
@@ -92,6 +89,9 @@ const mapStateToProps = (store) => {
             cloths: store.commonReducer.cloths, 
             CElements: store.commonReducer.CElements,
         },
+
+        CElements: store.commonReducer.CElements,
+
         step: store.commonReducer.step,
         cloth: store.commonReducer.cloth,
         CElement: store.commonReducer.CElement,
