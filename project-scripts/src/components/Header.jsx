@@ -1,16 +1,24 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styled, { css } from 'styled-components/macro';
 import NavBar from './NavBar';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      window.addEventListener("beforeunload", navigate("/"));
+      return () => {
+        window.removeEventListener("beforeunload", navigate("/"));
+      };
+    }, []);
 
     return (
         <Wrapper menuIsOpen={open}>
             <section className="top-nav">
                 <div className={'logo'}>
-                    <LinkExtends to={"/types-clothes"}>ShopLiv</LinkExtends>
+                    <LinkExtends to={"/"}>ShopLiv</LinkExtends>
                 </div>
 
                 <MenuWrapper>
@@ -20,7 +28,7 @@ const Header = () => {
                       <div className='menu-button'></div>
                   </label>
                   <Menu className="menu" onClick={() => setOpen(false)} >
-                      <LinkExtends to={"/types-clothes"}>главная</LinkExtends>
+                      <LinkExtends to={"/"}>главная</LinkExtends>
                       <LinkExtends to={"/types-clothes/step1"}>группы ткани</LinkExtends>
                       <LinkExtends to={"/types-clothes/step2"}>усложняющих элементы</LinkExtends>
                       <LinkExtends to={"/types-clothes/finish"}>финальный подсчет</LinkExtends>                    

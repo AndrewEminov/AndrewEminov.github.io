@@ -4,10 +4,15 @@ import {
 
 import styled from 'styled-components/macro';
 
-function TypeClothes({text, link, setTitle}) {
+function TypeClothes({text, link, setTitle, table, setTable}) {
+
+    const handleClick = () => {
+        setTitle(text);
+        setTable(table);
+    }
 
     return (
-        <ChooseClothes onClick={() => setTitle(text)} to={link}>
+        <ChooseClothes onClick={handleClick} to={link}>
             <span>{text}</span>
         </ChooseClothes>
     );

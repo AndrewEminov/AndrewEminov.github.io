@@ -4,11 +4,18 @@ import {
     SET_CLOTH, 
     SET_CELEMENT,
     SET_FEW_CELEMENTS,
-    SET_CURRENT_CELEMENTS
+    SET_CURRENT_CELEMENTS,
+    SET_TABLE_CLOTHES
 } from './actionTypes'
 
 const initValue = {
     title: '',
+    table: {
+      nameGroup: [],
+      complicatingElements: [],
+      data: {},
+      dataCElements: {}
+    },
     currentGoup: {
         cloths: [],
         CElements: [],
@@ -24,6 +31,8 @@ const initValue = {
 
 export default (state = initValue, action) => {
     switch (action.type) {
+      case SET_TABLE_CLOTHES: 
+        return {...state, table: action.payload};
       case SET_TITLE_CLOTHES_TYPE:
         return {...state, title: action.payload};
       case SET_CURRENT_GROUP_CLOTH:

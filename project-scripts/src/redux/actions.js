@@ -5,7 +5,8 @@ import {
     SET_CLOTH, 
     SET_CELEMENT,
     SET_FEW_CELEMENTS,
-    SET_CURRENT_CELEMENTS
+    SET_CURRENT_CELEMENTS,
+    SET_TABLE_CLOTHES
 } from './actionTypes'
 
 export const setTitleTypeClothes = (title) => ({
@@ -37,3 +38,8 @@ export const setCurrentCElements = (currentCElements) => ({
     type: SET_CURRENT_CELEMENTS,
     payload: currentCElements,
 });
+
+export const setTableClothes = (table) => ({
+    type: SET_TABLE_CLOTHES,
+    payload: table,
+}); 

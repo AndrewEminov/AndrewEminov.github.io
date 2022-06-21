@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
   Link,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import styled from 'styled-components/macro';
 
@@ -21,13 +21,13 @@ function App() {
       <Header/>   
 
       <Routes>
-        <Route path="/types-clothes" element={<TypesClothesMain/>}/>
+        <Route path="/" element={<TypesClothesMain/>}/>
         <Route exact path="/types-clothes/step1" element={<TypesClothesStepOne/>}/>
         <Route exact path="/types-clothes/step1/:id" element={<CurrentTypeClothStepOne/>}/>
         <Route exact path="/types-clothes/step2" element={<TypesClothesStepTwo/>}/>
         <Route exact path="/types-clothes/step2/:id" element={<CurrentTypeClothStepTwo/>}/>
         <Route exact path="/types-clothes/finish" element={<TypesClothesFinish/>}/>
-        <Route path="/" element={<Navigate to="/types-clothes" replace/>}/>
+        {/* <Route path="/" element={<Navigate to="/types-clothes" replace/>}/> */}
         <Route path="*" element={<div>Page not found</div>}/>
       </Routes>
     </Router>

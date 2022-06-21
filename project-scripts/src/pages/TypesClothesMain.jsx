@@ -3,34 +3,42 @@ import styled from 'styled-components/macro';
 import HeaderText from '../components/HeaderText';
 import TypeClothes from '../components/TypeClothes';
 import { connect } from 'react-redux';
-import { setTitleTypeClothes } from '../redux/actions'
+import { setTitleTypeClothes, setTableClothes } from '../redux/actions'
+import { MenAndWomen, Men, Women } from "../constants/tables";
 
-function TypesClothesMain({setTitleTypeClothes}) {
+function TypesClothesMain({setTitleTypeClothes, setTableClothes}) {
     return (
         <Wrapper>
             <HeaderText text={'Выберите один из типов одежды тип одежды:'} />
 
-            <TypeClothes 
+            <TypeClothes
+                setTable={setTableClothes}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=1"}
+                link={"/types-clothes/step1"}
                 text={'Мужская и женская верхняя одежда'}
+                table={MenAndWomen}
             />
-            <TypeClothes 
+            <TypeClothes
+                setTable={setTableClothes}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=2"}
+                link={"/types-clothes/step1"}
                 text={'Женская легкая одежда'}
+                table={Women}
             />
-            <TypeClothes 
+            <TypeClothes
+                setTable={setTableClothes}
                 setTitle={setTitleTypeClothes}
-                link={"/types-clothes/step1?type=3"}
+                link={"/types-clothes/step1"}
                 text={'Мужская легкая одежда'}
+                table={Men}
             />
         </Wrapper>
     );
   }
   
   const mapDispatchToProps = {
-    setTitleTypeClothes
+    setTitleTypeClothes,
+    setTableClothes,
   }
 
   export default connect(null, mapDispatchToProps)(TypesClothesMain);

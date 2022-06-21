@@ -7,35 +7,6 @@ import { useEffect } from "react";
 
 import { setCurrentGroupCloth, setCloth, setCElement } from "../redux/actions";
 
-const data = {
-    "1": [{id: Math.random(), value: 1}, {id: Math.random(), value: 2}, {id: Math.random(), value: 4}, {id: Math.random(), value: 223,}, {id: Math.random(), value: 999,}],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1}, {id: Math.random(), value: 31, }, {id: Math.random(), value: 41, }, {id: Math.random(), value: 5988, }],
-    "3": [{id: Math.random(), value: 3}, {id: Math.random(), value: 3}, {id: Math.random(), value: 11, }, {id: Math.random(), value: 432, }, {id: Math.random(), value: 56,}],
-    "4": [{id: Math.random(), value: 4}, {id: Math.random(), value: 4}, {id: Math.random(), value: 31,}, {id: Math.random(), value: 1114,}, {id: Math.random(), value: 777,}],
-};
-
-const dataCElements = {
-    "1": [{id: Math.random(), value: 2.5}, {id: Math.random(), value: 2.3}, {id: Math.random(), value: 2.2}, {id: Math.random(), value: 1} ],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1.8}, {id: Math.random(), value: 1.7, }, {id: Math.random(), value: 0.8} ],
-    "3": [{id: Math.random(), value: 232}, {id: Math.random(), value: 1222}, {id: Math.random(), value: 333, }, {id: Math.random(), value: 111} ],
-    "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}, {id: Math.random(), value: 1.4, }, {id: Math.random(), value: 0.6} ],
-}
-
-const nameGroup = [
-    'Пальто, полупальто зимние (с подкладкой и утепляющей прокладкой)',
-    'Жакет зимний (с подкладкой и утепляющей прокладкой)',
-    'Смокинг',
-    'Пиджак без подкладки',
-    'Фрак, визитка'
-]
-
-const complicatingElements = [
-    'в плечевых изделиях (кроме комбинезона)',
-    'в поясных изделиях (брюках, юбке, полукомбинезоне) и комбинезоне',
-]
-
-const titles = [ '1', '2', '3', '4']
-
 function CurrentTypeClothStepOne({ 
     CElement, 
     cloth, 
@@ -45,22 +16,23 @@ function CurrentTypeClothStepOne({
     setCloth,
     setCElement,
     title,
+    table,
 }) {
 
     const { id } = useParams();
 
     // if complicating elements is only one
     useEffect(() => {
-        if( complicatingElements.length < step ){
-            setCElement({data: currentGoup.CElements[step-1]});
+        if(step && table.complicatingElements.length < step ){
+            currentGoup?.CElements && setCElement({data: currentGoup.CElements[step-1]});
         }
     }, [step]);
 
 
     useEffect(() => {
         setCurrentGroupCloth({
-            cloths: data[id], 
-            CElements: dataCElements[id], 
+            cloths: table.data[id], 
+            CElements: table.dataCElements[id], 
             step: id
         });
     }, [id]);
@@ -82,7 +54,7 @@ function CurrentTypeClothStepOne({
 
             <Header>{step} группа ткани</Header>
 
-            {nameGroup.map((value, index) => (
+            {table.nameGroup.map((value, index) => (
                 <Cloth
                     style={cloth.key === index ? {background: 'rgba(0,0,255,.5)', color: 'white'} : {}} 
                     key={index} 
@@ -92,11 +64,11 @@ function CurrentTypeClothStepOne({
                 </Cloth>
             ))}
 
-            {cloth.key !== null && complicatingElements.length > step && 
+            {cloth.key !== null && table.complicatingElements.length > step && 
             <>
                 <Header>Один усложняющий элемент</Header>
 
-                {complicatingElements.map((element, index) => (
+                {table.complicatingElements.map((element, index) => (
                     <ComplicatingElement
                         style={CElement.key === index ? 
                             {background: 'rgba(0,0,255,.5)', color: 'white'} : {}} 
@@ -124,6 +96,7 @@ const mapStateToProps = (store) => {
         cloth: store.commonReducer.cloth,
         CElement: store.commonReducer.CElement,
         title: store.commonReducer.title,
+        table: store.commonReducer.table,
     }
   }
 
