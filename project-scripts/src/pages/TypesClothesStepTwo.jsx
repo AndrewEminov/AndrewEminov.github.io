@@ -5,6 +5,7 @@ import Steps from '../components/steps/index';
 import { connect } from 'react-redux';
 import { setCurrentCElements, setFewCElements } from "../redux/actions";
 import { LinkBtn } from '../components/Btns';
+import { GeneralCElements } from '../constants/tables';
 
 const linkStyles = `
   width: 100%;
@@ -30,12 +31,12 @@ const stepsStyles = `
     justify-content: space-around;
 `;
 
-const titles = [ 
-    'Рельефы, швы, складки, клинья, шлицы (разрезы)', 
-    'Подрезы, драпировки, сборки, кулиса. Детали отрезные в горизонтальном направлении', 
-    'Застёжка, лацканы, воротник, вырез горловины, капюшон', 
-    'Карманы, клапаны'
-];
+// const titles = [ 
+//     'Рельефы, швы, складки, клинья, шлицы (разрезы)', 
+//     'Подрезы, драпировки, сборки, кулиса. Детали отрезные в горизонтальном направлении', 
+//     'Застёжка, лацканы, воротник, вырез горловины, капюшон', 
+//     'Карманы, клапаны'
+// ];
 
 
 
@@ -47,7 +48,7 @@ function TypesClothesStepTwo() {
         <Header>Выберите типы усложняющих элементов</Header>
         <Steps
             styles={{steps: stepsStyles, currentStep: currentStepStyles, link: linkStyles }}
-            titles={titles}
+            titles={GeneralCElements.titles}
             link={'/types-clothes/step2/'}
         />
         <LinkBtn link={"/types-clothes/finish"} text={'далее'}/>

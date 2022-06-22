@@ -31,17 +31,139 @@ const MenAndWomen = {
   ],
 
   data: {
-    "1": [{id: Math.random(), value: 1}, {id: Math.random(), value: 2}, {id: Math.random(), value: 4}, {id: Math.random(), value: 223,}, {id: Math.random(), value: 999,}],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1}, {id: Math.random(), value: 31, }, {id: Math.random(), value: 41, }, {id: Math.random(), value: 5988, }],
-    "3": [{id: Math.random(), value: 3}, {id: Math.random(), value: 3}, {id: Math.random(), value: 11, }, {id: Math.random(), value: 432, }, {id: Math.random(), value: 56,}],
-    "4": [{id: Math.random(), value: 4}, {id: Math.random(), value: 4}, {id: Math.random(), value: 31,}, {id: Math.random(), value: 1114,}, {id: Math.random(), value: 777,}],
+    "1": [
+      {id: Math.random(), value: 74}, 
+      {id: Math.random(), value: 59}, 
+      {id: Math.random(), value: 62}, 
+      {id: Math.random(), value: 47}, 
+      {id: Math.random(), value: 62},
+
+      {id: Math.random(), value: 47},
+      {id: Math.random(), value: 95},
+      {id: Math.random(), value: 120},
+      {id: Math.random(), value: 19},
+      {id: Math.random(), value: 56},
+      {id: Math.random(), value: 42},
+
+      {id: Math.random(), value: 48},
+      {id: Math.random(), value: 42},
+      {id: Math.random(), value: 34},
+      {id: Math.random(), value: 30},
+      {id: Math.random(), value: 24},
+      {id: Math.random(), value: 26},
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 12},
+      {id: Math.random(), value: 21},
+      {id: Math.random(), value: 19},
+
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 14},
+      {id: Math.random(), value: 39},
+      {id: Math.random(), value: 27},
+      {id: Math.random(), value: 12},
+    ],
+
+    "2": [
+      {id: Math.random(), value: 57}, 
+      {id: Math.random(), value: 46}, 
+      {id: Math.random(), value: 48}, 
+      {id: Math.random(), value: 36}, 
+      {id: Math.random(), value: 48},
+
+      {id: Math.random(), value: 36},
+      {id: Math.random(), value: 75},
+      {id: Math.random(), value: 96},
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 43},
+      {id: Math.random(), value: 32},
+
+      {id: Math.random(), value: 39},
+      {id: Math.random(), value: 52},
+      {id: Math.random(), value: 26},
+      {id: Math.random(), value: 24},
+      {id: Math.random(), value: 19},
+      {id: Math.random(), value: 20},
+      {id: Math.random(), value: 12},
+      {id: Math.random(), value: 9},
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 13},
+
+      {id: Math.random(), value: 19},
+      {id: Math.random(), value: 10},
+      {id: Math.random(), value: 30},
+      {id: Math.random(), value: 19},
+      {id: Math.random(), value: 10}
+    ],
+
+    "3": [
+      {id: Math.random(), value: 44}, 
+      {id: Math.random(), value: 35}, 
+      {id: Math.random(), value: 36}, 
+      {id: Math.random(), value: 27}, 
+      {id: Math.random(), value: 36},
+
+      {id: Math.random(), value: 27},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 32},
+      {id: Math.random(), value: 24},
+
+      {id: Math.random(), value: 32},
+      {id: Math.random(), value: 26},
+      {id: Math.random(), value: 21},
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 13},
+      {id: Math.random(), value: 13},
+      {id: Math.random(), value: 9},
+      {id: Math.random(), value: 7},
+      {id: Math.random(), value: 12},
+      {id: Math.random(), value: 11},
+
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 9},
+      {id: Math.random(), value: 26},
+      {id: Math.random(), value: 16},
+      {id: Math.random(), value: 8},
+    ],
+    "4": [
+      {id: Math.random(), value: 0}, 
+      {id: Math.random(), value: 0}, 
+      {id: Math.random(), value: 34}, 
+      {id: Math.random(), value: 24}, 
+      {id: Math.random(), value: 0},
+
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+      {id: Math.random(), value: 0},
+
+      {id: Math.random(), value: 27},
+      {id: Math.random(), value: 23},
+      {id: Math.random(), value: 18},
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 13},
+      {id: Math.random(), value: 13},
+      {id: Math.random(), value: 9},
+      {id: Math.random(), value: 7},
+      {id: Math.random(), value: 12},
+      {id: Math.random(), value: 11},
+
+      {id: Math.random(), value: 15},
+      {id: Math.random(), value: 9},
+      {id: Math.random(), value: 26},
+      {id: Math.random(), value: 16},
+      {id: Math.random(), value: 8},
+    ],
   },
 
   dataCElements: {
-    "1": [{id: Math.random(), value: 2.5}, {id: Math.random(), value: 2.3}, {id: Math.random(), value: 2.2}, {id: Math.random(), value: 1} ],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1.8}, {id: Math.random(), value: 1.7, }, {id: Math.random(), value: 0.8} ],
-    "3": [{id: Math.random(), value: 232}, {id: Math.random(), value: 1222}, {id: Math.random(), value: 333, }, {id: Math.random(), value: 111} ],
-    "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}, {id: Math.random(), value: 1.4, }, {id: Math.random(), value: 0.6} ],
+    "1": [{id: Math.random(), value: 2.5}, {id: Math.random(), value: 2.3}],
+    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1.8}],
+    "3": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}],
+    "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}],
   }
 }
 
@@ -52,10 +174,10 @@ const Men = {
   complicatingElements: [],
 
   data: {
-    "1": [{id: Math.random(), value: 1}, {id: Math.random(), value: 2}, {id: Math.random(), value: 4}, {id: Math.random(), value: 223,}, {id: Math.random(), value: 999,}],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1}, {id: Math.random(), value: 31, }, {id: Math.random(), value: 41, }, {id: Math.random(), value: 5988, }],
-    "3": [{id: Math.random(), value: 3}, {id: Math.random(), value: 3}, {id: Math.random(), value: 11, }, {id: Math.random(), value: 432, }, {id: Math.random(), value: 56,}],
-    "4": [{id: Math.random(), value: 4}, {id: Math.random(), value: 4}, {id: Math.random(), value: 31,}, {id: Math.random(), value: 1114,}, {id: Math.random(), value: 777,}],
+    "1": [{id: Math.random(), value: 8}],
+    "2": [{id: Math.random(), value: 6}],
+    "3": [{id: Math.random(), value: 5}],
+    "4": [{id: Math.random(), value: 5}],
   },
 
   dataCElements: {
@@ -77,10 +199,34 @@ const Women = {
   complicatingElements: [],
 
   data: {
-    "1": [{id: Math.random(), value: 1}, {id: Math.random(), value: 2}, {id: Math.random(), value: 4}, {id: Math.random(), value: 223,}, {id: Math.random(), value: 999,}],
-    "2": [{id: Math.random(), value: 2}, {id: Math.random(), value: 1}, {id: Math.random(), value: 31, }, {id: Math.random(), value: 41, }, {id: Math.random(), value: 5988, }],
-    "3": [{id: Math.random(), value: 3}, {id: Math.random(), value: 3}, {id: Math.random(), value: 11, }, {id: Math.random(), value: 432, }, {id: Math.random(), value: 56,}],
-    "4": [{id: Math.random(), value: 4}, {id: Math.random(), value: 4}, {id: Math.random(), value: 31,}, {id: Math.random(), value: 1114,}, {id: Math.random(), value: 777,}],
+    "1": [
+      {id: Math.random(), value: 27}, 
+      {id: Math.random(), value: 0}, 
+      {id: Math.random(), value: 0}, 
+      {id: Math.random(), value: 0}, 
+      {id: Math.random(), value: 19}
+    ],
+    "2": [
+      {id: Math.random(), value: 18}, 
+      {id: Math.random(), value: 21}, 
+      {id: Math.random(), value: 9, text: "Шелк натуральный"}, 
+      {id: Math.random(), value: 5},
+      {id: Math.random(), value: 15}
+    ],
+    "3": [
+      {id: Math.random(), value: 16}, 
+      {id: Math.random(), value: 18}, 
+      {id: Math.random(), value: 7.5, text: "вискоза подкладочная"}, 
+      {id: Math.random(), value: 4},
+      {id: Math.random(), value: 13}
+    ],
+    "4": [
+      {id: Math.random(), value: 14}, 
+      {id: Math.random(), value: 16}, 
+      {id: Math.random(), value: 7.5, text: "хлопок, батист"}, 
+      {id: Math.random(), value: 4}, 
+      {id: Math.random(), value: 11}
+    ],
   },
 
   dataCElements: {
@@ -92,8 +238,435 @@ const Women = {
 }
 
 
+const GeneralCElements = {
+
+  titles: [ 
+    'Рельефы, швы, складки, клинья, шлицы (разрезы)', 
+    'Подрезы, драпировки, сборки, кулиса. Детали отрезные в горизонтальном направлении', 
+    'Застёжка, лацканы, воротник, вырез горловины, капюшон', 
+    'Карманы, клапаны',
+    'Кокетка, вставка, планка, баска, пелерина, бретели и др. детали',
+    'Пояс, хлястик, детали накладные мелкие',
+    'Рукава',
+    'Особенности обработки материалов',
+    'Особенности конструирования и технологической обработки изделий',
+  ],
+
+  CElements: {
+    "1": [
+        {
+            id: Math.random(), 
+            value: 2.5, 
+            title: 'Рельефы разрезные или неразрезные, прямые или переходящие в складки – не более двух'
+        },
+        {
+            id: Math.random(), 
+            value: 2.3,
+            title: `Рельефы, или отрезные бочки, или швы в изделии.
+                    два прерывающихся рельефа на одной полочке или другой детали`
+        },
+        {
+            id: Math.random(), 
+            value: 2.2,
+            title: 'Отрезные бочки в изделии'
+        },
+        {
+            id: Math.random(), 
+            value: 1,
+            title: 'Швы в изделии, включая швы клиньев – не более двух '
+        },
+        {
+          id: Math.random(), 
+          value: 2,
+          title: 'Фигурные разрезные не более двух'
+      },
+      {
+          id: Math.random(), 
+          title: 'Вытачки по линии талии полочек и спинки. Сверх минимальной сложности', 
+          value: 1
+      }, 
+      {
+        id: Math.random(), 
+        title: `
+          Складки разных видов. 
+          Заутюженные шириной свыше 2 см: 
+          - длиной свыше 30 см – не более трёх 
+          - длиной до 30 см – не более шести 
+          - одна складка в изделии поперечная или расположенная в косом направлении `, 
+        value: 1
+      },
+      {
+        id: Math.random(), 
+        title: 'Складки разных видов. Складки в боковых швах брюк', 
+        value: 1
+      },
+      {
+        id: Math.random(), 
+        title: 'Складки разных видов. Мягкие (застрочены по линии соединения с другой деталью): не более шести, кроме юбки в складку', 
+        value: 1.5
+      },
+      {
+        id: Math.random(), 
+        title: 'Складки мягкие по всей юбке (в том числе в юбке в отрезном изделии). Застрочены по линии соединения с другой деталью (не более двенадцати)', 
+        value: 2
+      },
+      {
+        id: Math.random(), 
+        title: 'Клинья, втачанные в швы, рельефы. В юбке или отрезном по линии талии изделии не более двух клиньев', 
+        value: 1
+      },
+      {
+        id: Math.random(), 
+        title: 'Шлицы (разрезы) в швах изделия. Одна шлица (разрез любой длины)', 
+        value: 1
+      },
+      {
+        id: Math.random(), 
+        title: 'Шлицы (разрезы) в швах изделия. Две шлицы (разреза) любой длины до 15 см', 
+        value: 1
+      },
+  
+      {
+        id: Math.random(), 
+        title: 'Шлицы (разрезы) в швах изделия. Третий шов юбки и расположенная в нём шлица', 
+        value: 1.5
+      },
+    ],
+
+    "2": [
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: 'Подрезы. Два подреза, симметрично расположенные, или один асимметрично расположенный подрез'
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: 'Подрезы. Два подреза, симметрично расположенные, или один асимметрично расположенный подрез со сборками или мягкими складками'
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Драпировка несложная.
+          Достигается конструктивным способом с
+          помощью сборок, мягких складок: по
+          плечевым швам, переводному плечу
+          изделий, середине переда, отрезной линии
+          талии, бёдер, кокетки или на других участках
+          полочек и спинки, половинок брюк, юбки
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 4, 
+        title: `
+          Драпировка сложная глубокая полочек (переда) или спинки. 
+          Достигается частично конструктивным путём,
+          а в основном муляжным методом – на фигуре
+          заказчика`
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Кулиса на разных участках изделия.
+          С лицевой или изнаночной стороны изделия,
+          с продёргиванием узкой или широкой
+          эластичной тесьмы или шнура в один ряд по
+          линии талии или плечевым швам, или на
+          других участках изделия (не более двух 1 участков)
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Кулиса на разных участках изделия.
+          С продёргиванием эластичной тесьмы или
+          шнура в два ряда по линии талии или
+          плечевым швам, или на других участках
+          изделия (не более двух участков)
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Тесьма эластичная, шнур по краям деталей.
+          В один ряд по горловине
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Тесьма эластичная, шнур по краям деталей. 
+          В один ряд по верхнему краю юбки или по
+          низу изделия или рукавов
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Тесьма эластичная, шнур по краям деталей. 
+          В два ряда по горловине, по верхнему краю
+          юбки или по низу изделия или рукавов
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Детали изделия, отрезные в горизонтальном направлении.
+          Полочка и спинка по линии талии (отрезное
+          по талии изделие), бёдер или на других
+          участках, половинки брюк, переводное плечо
+          изделия
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Детали изделия, отрезные в горизонтальном направлении.
+          Две отрезные линии только на полочках или
+          только на спинке, или на одном полотнище
+          юбки
+        `
+      }
+    ],
+
+    "3": [
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Застёжка с обработкой её разными способами.
+          На обмётанные петли и пуговицы, или
+          пришивные кнопки, или пришивные крючки с
+          петлями, или молнию (кроме
+          предусмотренных в описании минимальной
+          сложности):
+          - в изделиях лёгкой одежды,
+          юбке
+          - в боковом шве плечевых
+          изделий
+          - в разрезах на разных участках изделия (не
+          более двух)
+          - на молнию (неразъемную) длиной свыше
+          20 см,
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Застёжка с обработкой её разными способами.
+          - в мужской сорочке, блузе обработка планками или подбортами, или застёжка потайная
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Застёжка с обработкой её разными способами.
+          - в платье обработка планками или
+          подбортами или застежка потайная
+          - в среднем шве капюшона
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Лацканы большие в верхней одежде. 
+          Большими считаются лацканы шириной более 2 см от линии полузаноса.
+          При расположении верхней петли выше линии груди.
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 3, 
+        title: `
+          Лацканы большие в верхней одежде.
+          Большими считаются лацканы шириной более 2 см от линии полузаноса.
+          При расположении верхней петли ниже линии груди и выше линии талии.
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 4, 
+        title: `
+          Лацканы большие в верхней одежде. 
+          Большими считаются лацканы шириной более 2 см от линии полузаноса.
+          При расположении верхней петли за стёжки на линии талии или ниже.
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1, 
+        title: `
+          Воротник или вырез горловины.
+          воротник притачной (стойка, отложой)
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Воротник или вырез горловины.
+          воротник притачной: отложной с отрезной стойкой или обтачкой по отлёту
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Воротник или вырез горловины.
+          воротник притачной: драпированный; с вытачками
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Воротник или вырез горловины.
+          притачной воротник - шарф; воротник – галстук; воротник матросский
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Воротник или вырез горловины.
+          воротник притачной: в лёгкой одежде апаш и
+          шаль с орезным нижним воротником
+          цельновыкроенным, с основными деталями
+          изделия
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Воротник или вырез горловины.
+          притачной воротник широкий – в застёгнутом
+          виде с расположением отлёта на расстоянии
+          не более 2 см от линии проймы.
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Воротник или вырез горловины.
+          вырез горловины: большой или глубокий, или
+          сложной конфигурации или вырез на спинке
+          глубокий.
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Воротник или вырез горловины.
+          Воротник по типу «английский,
+          однобортный, с шириной отлета до 7 см
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 3, 
+        title: `
+          Воротник или вырез горловины.
+          Воротник по типу «английский, с шириной
+          отлета более 7 см, постороенный путем
+          совмещения полочки и спинки
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 1.5, 
+        title: `
+          Воротник или вырез горловины.
+          большой вырез горловины – при длине
+          плечевого шва до 5 см, глубокий – от линии
+          обхвата груди первого и ниже 
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2.5, 
+        title: `
+          Капюшон при наличии воротника.
+          Притачной разной конструкции с подкладкой
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2, 
+        title: `
+          Капюшон при наличии воротника.
+          Притачной разной конструкции без подкладки
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 3, 
+        title: `
+          Капюшон при наличии воротника.
+          Пристёгивающийся, с утепляющей
+          прокладкой или на подкладке из
+          искусственного меха
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 2.5, 
+        title: `
+          Капюшон при наличии воротника.
+          Пристёгивающийся без подкладки
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 4, 
+        title: `
+          Капюшон (опушка) или
+          воротник меховой,
+          пристёгивающиеся к
+          изделию (без
+          скорняжных работ).
+          Капюшон на подкладке и утепляющей
+          прокладке, или на подкладке из
+          искусственного меха 
+        `
+      },
+      {
+        id: Math.random(), 
+        value: 3.5, 
+        title: `
+          Капюшон (опушка) или
+          воротник меховой,
+          пристёгивающиеся к
+          изделию (без
+          скорняжных работ).
+          Капюшон или воротник без утепляющей подкладки
+        `
+      },
+    ],
+    "4": [ // Карманы, клапаны
+      {}
+    ]
+  }
+}
+
+
 export {
+  GeneralCElements,
   MenAndWomen,
   Men,
-  Women
+  Women,
 }

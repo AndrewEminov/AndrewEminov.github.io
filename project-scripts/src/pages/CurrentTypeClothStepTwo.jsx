@@ -5,56 +5,57 @@ import { setCurrentCElements, setFewCElements } from "../redux/actions";
 import { useEffect } from "react";
 import { LinkBtn } from '../components/Btns';
 
+import { GeneralCElements } from '../constants/tables';
 
-const dataCElements = {
-    "1": [
-        {
-            id: Math.random(), 
-            value: 2.5, 
-            title: 'Рельефы разрезные или неразрезные, прямые или переходящие в складки – не более двух'
-        },
-        {
-            id: Math.random(), 
-            value: 2.3,
-            title: `Рельефы, или отрезные бочки, или швы в изделии.
-                    два прерывающихся рельефа на одной полочке или другой детали`
-        },
-        {
-            id: Math.random(), 
-            value: 2.2,
-            title: 'Отрезные бочки в изделии'
-        },
-        {
-            id: Math.random(), 
-            value: 1,
-            title: 'Швы в изделии, включая швы клиньев – не более двух '
-        },
-    ],
-    "2": [
-        {
-            id: Math.random(), 
-            title: '11111', 
-            value: 2
-        }, 
-        {
-            id: Math.random(), 
-            title: '222', 
-            value: 1.8
-        }, 
-        {
-            id: Math.random(), 
-            title: '43411', 
-            value: 1.7, 
-        }, 
-        {
-            id: Math.random(), 
-            title: 'tttt', 
-            value: 0.8
-        } 
-    ],
-    "3": [{id: Math.random(), value: 232}, {id: Math.random(), value: 1222}, {id: Math.random(), value: 333, }, {id: Math.random(), value: 111} ],
-    "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}, {id: Math.random(), value: 1.4, }, {id: Math.random(), value: 0.6} ],
-}
+// const dataCElements = {
+//     "1": [
+//         {
+//             id: Math.random(), 
+//             value: 2.5, 
+//             title: 'Рельефы разрезные или неразрезные, прямые или переходящие в складки – не более двух'
+//         },
+//         {
+//             id: Math.random(), 
+//             value: 2.3,
+//             title: `Рельефы, или отрезные бочки, или швы в изделии.
+//                     два прерывающихся рельефа на одной полочке или другой детали`
+//         },
+//         {
+//             id: Math.random(), 
+//             value: 2.2,
+//             title: 'Отрезные бочки в изделии'
+//         },
+//         {
+//             id: Math.random(), 
+//             value: 1,
+//             title: 'Швы в изделии, включая швы клиньев – не более двух '
+//         },
+//     ],
+//     "2": [
+//         {
+//             id: Math.random(), 
+//             title: '11111', 
+//             value: 2
+//         }, 
+//         {
+//             id: Math.random(), 
+//             title: '222', 
+//             value: 1.8
+//         }, 
+//         {
+//             id: Math.random(), 
+//             title: '43411', 
+//             value: 1.7, 
+//         }, 
+//         {
+//             id: Math.random(), 
+//             title: 'tttt', 
+//             value: 0.8
+//         } 
+//     ],
+//     "3": [{id: Math.random(), value: 232}, {id: Math.random(), value: 1222}, {id: Math.random(), value: 333, }, {id: Math.random(), value: 111} ],
+//     "4": [{id: Math.random(), value: 1.7}, {id: Math.random(), value: 1.5}, {id: Math.random(), value: 1.4, }, {id: Math.random(), value: 0.6} ],
+// }
 
 
 const CurrentTypeClothStepTwo = ({ 
@@ -71,8 +72,9 @@ const CurrentTypeClothStepTwo = ({
 
 
     useEffect(() => {
+        console.log( GeneralCElements.CElements, id);
         setFewCElements({
-            data: dataCElements[id], 
+            data: GeneralCElements.CElements[id], 
             //title
         })
     }, [id]);
