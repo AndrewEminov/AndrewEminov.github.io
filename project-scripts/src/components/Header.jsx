@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled, { css } from 'styled-components/macro';
 import NavBar from './NavBar';
+import { Btn } from '../components/Btns';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
+    const [navBarIsOpen, setNavBarIsOpen] = useState(false);
 
     useEffect(() => {
       window.addEventListener("beforeunload", navigate("/"));
@@ -22,11 +24,19 @@ const Header = () => {
                 </div>
 
                 <MenuWrapper>
-                  <NavBar/>
+                  <NavBar
+                    navBarIsOpen={navBarIsOpen}
+                    setNavBarIsOpen={setNavBarIsOpen}
+                  />
+                  
+                  {!navBarIsOpen && 
+                    <Btn styles={{ padding: '5px 13px', fontSize: '15px'}} handleClick={() => setNavBarIsOpen(!navBarIsOpen)} text={'состав'}/>
+                  }
+
                   <input onClick={() => setOpen(!open)} id="menu-toggle" type="checkbox" />
                   <label className='menu-button-container' for="menu-toggle">
                       <div className='menu-button'></div>
-                  </label>
+                  </label>                  
                   <Menu className="menu" onClick={() => setOpen(false)} >
                       <LinkExtends to={"/"}>главная</LinkExtends>
                       <LinkExtends to={"/types-clothes/step1"}>группы ткани</LinkExtends>

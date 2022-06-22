@@ -4,9 +4,10 @@ import {
 
 import styled from 'styled-components/macro';
 
-function TypeClothes({text, link, setTitle, table, setTable}) {
+function TypeClothes({text, link, setTitle, table, setTable, setInitData}) {
 
     const handleClick = () => {
+        setInitData();
         setTitle(text);
         setTable(table);
     }

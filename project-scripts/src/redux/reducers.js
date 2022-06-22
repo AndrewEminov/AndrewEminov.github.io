@@ -5,7 +5,8 @@ import {
     SET_CELEMENT,
     SET_FEW_CELEMENTS,
     SET_CURRENT_CELEMENTS,
-    SET_TABLE_CLOTHES
+    SET_TABLE_CLOTHES,
+    SET_INIT_DATA
 } from './actionTypes'
 
 const initValue = {
@@ -31,6 +32,8 @@ const initValue = {
 
 export default (state = initValue, action) => {
     switch (action.type) {
+      case SET_INIT_DATA:
+        return {...state, ...initValue};
       case SET_TABLE_CLOTHES: 
         return {...state, table: action.payload};
       case SET_TITLE_CLOTHES_TYPE:

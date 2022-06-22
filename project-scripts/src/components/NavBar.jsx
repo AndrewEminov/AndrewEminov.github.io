@@ -9,16 +9,15 @@ import { Btn } from '../components/Btns';
 
 const BtnStyles = { padding: '5px 13px', fontSize: '15px'};
 
-const NavBar = ({title, step, cloth, CElement, currentCElements}) => {
-    const [navBarIsOpen, setNavBarIsOpen] = useState(false);
+const NavBar = ({title, step, cloth, CElement, currentCElements, navBarIsOpen, setNavBarIsOpen}) => {
     const NavBarIsNotEmpty = cloth.key !== null || CElement.key !== null || currentCElements.length;
     
     return (
         <Wrapper navBarIsOpen={navBarIsOpen}>
-             <Btn styles={BtnStyles} handleClick={() => setNavBarIsOpen(!navBarIsOpen)} text={'состав'}/>
+            {!!navBarIsOpen && 
+            <List>
+                <Btn styles={BtnStyles} handleClick={() => setNavBarIsOpen(!navBarIsOpen)} text={'состав'}/>
 
-            {!!navBarIsOpen &&
-                <List>
                 {NavBarIsNotEmpty ? 
                     <>
                     <h1>{title}</h1>
@@ -59,7 +58,7 @@ const NavBar = ({title, step, cloth, CElement, currentCElements}) => {
                             <h1>Ничего не выбрано</h1>
                         </div>
                     }
-                </List>
+            </List>
             }
         </Wrapper>
     );
@@ -94,8 +93,8 @@ const Wrapper = styled.div`
         margin-right: 20px;
 
         ${(p) => p.navBarIsOpen && `
-            position: fixed;
-            left: 65%;  
+            position: absolute;
+            left: 80%;  
             top: 3%;
         `}
 
@@ -126,11 +125,7 @@ const List = styled.div`
 
     h1{
         font-size: 20px;
-        margin-top: 40px;
-    }
-
-    h1:first-child{
-        margin-top: 80px;
+        margin-top: 90px;
     }
 
     li{
