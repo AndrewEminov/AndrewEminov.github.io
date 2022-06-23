@@ -108,7 +108,10 @@ return (
                 {element.title}
             </Cloth>
         ))}
-        <LinkBtn link={"/types-clothes/step2"} text={'назад'}/>
+        <WrapperBtns>
+            <LinkBtn link={"/types-clothes/step2"} text={'назад'}/>
+            <LinkBtn link={"/types-clothes/finish"} text={'далее'}/>
+        </WrapperBtns>
     </Wrapper>
     )
 }
@@ -141,6 +144,14 @@ margin: 50px auto;
 //     width: 90%;
 //     margin: 0 auto 20px;
 // }
+`;
+
+const WrapperBtns = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    margin: 0 auto;
 `;
 
 const Header = styled.h1`

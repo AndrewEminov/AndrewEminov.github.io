@@ -105,7 +105,7 @@ const EnterPrice = styled.input`
     outline: none;
     font-size: 18px;
 
-    @media(max-width: 320px){
-        width: 100%;
+    @media(max-width: 425px){
+        width: 170px;
     }
 `;

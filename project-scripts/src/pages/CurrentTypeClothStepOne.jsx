@@ -77,7 +77,10 @@ function CurrentTypeClothStepOne({
                 ))}
             </>
             }
-            <LinkBtn link={"/types-clothes/step1"} text={'назад'}/>
+            <WrapperBtns>
+                <LinkBtn link={"/types-clothes/step1"} text={'назад'}/>
+                <LinkBtn link={"/types-clothes/step2"} text={'далее'}/>
+            </WrapperBtns>
         </Wrapper>
     );
   }
@@ -108,6 +111,14 @@ const mapStateToProps = (store) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentTypeClothStepOne);
   
+
+    const WrapperBtns = styled.div`
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 200px;
+        margin: 0 auto;
+    `;
 
   const ComplicatingElement = styled.div`
     font-size: 16px;

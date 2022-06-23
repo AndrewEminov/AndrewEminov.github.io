@@ -39,7 +39,7 @@ function TypesClothesStepOne() {
                 titles={titles} 
                 link={'/types-clothes/step1/'}
             />
-            <LinkBtn link={"/types-clothes/step2"} text={'далее'}/>
+            {/* <LinkBtn link={"/"} text={'назад'}/> */}
         </Wrapper>
     );
   }

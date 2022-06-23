@@ -51,7 +51,7 @@ function TypesClothesStepTwo() {
             titles={GeneralCElements.titles}
             link={'/types-clothes/step2/'}
         />
-        <LinkBtn link={"/types-clothes/finish"} text={'далее'}/>
+        {/* <LinkBtn link={"/types-clothes/step1"} text={'назад'}/> */}
     </Wrapper>
     );
   }
