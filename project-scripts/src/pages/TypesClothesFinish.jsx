@@ -1,6 +1,5 @@
 
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import HeaderText from '../components/HeaderText';
 import { Btn } from '../components/Btns';
 import styled from 'styled-components/macro';
@@ -28,8 +27,8 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
         <Wrapper>
             <HeaderText text={'Финальный подсчет'} />
             <InfoWrapper>
-                <span>Группа ткани: {cloth.data.value}</span>
-                <span>Усложняющий элемент: {CElement.data.value}</span>
+                <span>Группа ткани: {cloth.data.value || <Error>не выбрано</Error>}</span>
+                <span>Усложняющий элемент: {CElement.data.value || <Error>не выбрано</Error>}</span>
                 <span>Кол-во усложняющий элементов: {currentCElements.length}</span>
                 <span>
                     Стоимость: 
@@ -96,6 +95,7 @@ const InfoWrapper = styled.div`
 `;
 
 const EnterPrice = styled.input`
-    border: none;
+    border: 2px solid #B9B8CD;
     outline: none;
+    font-size: 18px;
 `;

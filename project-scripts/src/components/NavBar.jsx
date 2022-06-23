@@ -103,7 +103,7 @@ const Wrapper = styled.div`
         @media(min-width: 700px){
             padding: 5px 10px;
             font-size: 14px;
-            margin-right: 0px;
+            margin-right: 0px;            
         }
     }
 `;

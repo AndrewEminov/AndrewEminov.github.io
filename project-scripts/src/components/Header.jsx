@@ -8,6 +8,7 @@ const Header = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const [navBarIsOpen, setNavBarIsOpen] = useState(false);
+    const BtnStyles = { padding: '5px 13px', fontSize: '15px', marginRight: '10px'};
 
     useEffect(() => {
       window.addEventListener("beforeunload", navigate("/"));
@@ -30,7 +31,7 @@ const Header = () => {
                   />
                   
                   {!navBarIsOpen && 
-                    <Btn styles={{ padding: '5px 13px', fontSize: '15px'}} handleClick={() => setNavBarIsOpen(!navBarIsOpen)} text={'состав'}/>
+                    <Btn styles={BtnStyles} handleClick={() => setNavBarIsOpen(!navBarIsOpen)} text={'состав'}/>
                   }
 
                   <input onClick={() => setOpen(!open)} id="menu-toggle" type="checkbox" />
@@ -58,6 +59,10 @@ const MenuWrapper = styled.div`
 
   @media(min-width: 700px){
     flex-direction: row-reverse;
+
+    button{
+      margin-right: 0px;
+    }
   }
 `;
 const Menu = styled.div`
