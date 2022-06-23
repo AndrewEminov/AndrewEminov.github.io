@@ -79,6 +79,12 @@ const Error = styled.div`
 const Wrapper = styled.div`
     width: 60%;
     margin: 0 auto;
+
+    @media(max-width: 425px){
+        width: 85%;
+
+    }
+
 `;
 
 const InfoWrapper = styled.div`
@@ -98,4 +104,8 @@ const EnterPrice = styled.input`
     border: 2px solid #B9B8CD;
     outline: none;
     font-size: 18px;
+
+    @media(max-width: 320px){
+        width: 100%;
+    }
 `;

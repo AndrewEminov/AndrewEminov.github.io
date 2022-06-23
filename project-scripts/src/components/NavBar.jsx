@@ -94,7 +94,7 @@ const Wrapper = styled.div`
 
         ${(p) => p.navBarIsOpen && `
             position: absolute;
-            left: 80%;  
+            left: 70%;  
             top: 3%;
         `}
 
@@ -103,7 +103,11 @@ const Wrapper = styled.div`
         @media(min-width: 700px){
             padding: 5px 10px;
             font-size: 14px;
-            margin-right: 0px;            
+            margin-right: 0px;
+            
+            ${(p) => p.navBarIsOpen && `
+                left: 80%;  
+            `}
         }
     }
 `;
