@@ -332,7 +332,6 @@ const GeneralCElements = {
         value: 1.5
       },
     ],
-
     "2": [
       {
         id: Math.random(), 
@@ -437,7 +436,6 @@ const GeneralCElements = {
         `
       }
     ],
-
     "3": [
       {
         id: Math.random(), 
