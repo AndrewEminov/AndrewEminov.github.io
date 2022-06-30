@@ -13,9 +13,10 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
     const [ error, setError ] = useState(false);
 
     const handleGetResult = () => {
-        if(CElement.data.value && currentCElements.length && cloth.data.value){
+        if(cloth.data.value){
             setError(false);
-            const sum = (CElement.data.value * currentCElements.length + cloth.data.value) * currency;
+
+            const sum = ((CElement.data.value || 0) * currentCElements.length + cloth.data.value) * currency;
             setSum(sum);
         }else{
             setError(true);
@@ -27,8 +28,8 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
         <Wrapper>
             <HeaderText text={'Финальный подсчет'} />
             <InfoWrapper>
-                <span>Группа ткани: {cloth.data.value || <Error>не выбрано</Error>}</span>
-                <span>Усложняющий элемент: {CElement.data.value || <Error>не выбрано</Error>}</span>
+                <span>Кол-во условных единиц: {cloth.data.value}</span>
+                <span>Коэффициент сложности: {CElement.data.value || 0}</span>
                 <span>Кол-во усложняющий элементов: {currentCElements.length}</span>
                 <span>
                     Стоимость: 
