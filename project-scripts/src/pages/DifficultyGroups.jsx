@@ -1,0 +1,69 @@
+import styled from 'styled-components/macro';
+import Steps from '../components/steps/index';
+import { LinkBtn } from '../components/Btns';
+
+const titles = ['0', '1', '2', '3', '4']
+
+const currentStepStyles = `
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    height: 80px;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 5px 5px 4px 1px rgba(0, 0, 255, .2);
+        color: rgba(0, 0, 255, .5);
+    }
+`;
+
+const stepsStyles = `
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+`;
+
+function DifficultyGroups() {
+
+    return (
+        <Wrapper>
+            {/* <HeaderText text={text} /> */}
+
+            <Header>Распределение материалов по группам сложности в зависимости от трудоёмкости обработки</Header>
+            <Steps
+                styles={{steps: stepsStyles, currentStep: currentStepStyles}}
+                titles={titles} 
+                link={'/types-clothes/difficulty-groups/'}
+            />
+            {/* <LinkBtn link={"/"} text={'назад'}/> */}
+        </Wrapper>
+    );
+  }
+
+
+
+export default DifficultyGroups;
+
+  const Header = styled.h1`
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom 50px;
+    text-align: center;
+  `;
+
+  const Wrapper = styled.div`
+    //display: flex;
+    // align-items: center;
+    // justify-content: space-around;
+    // @media (max-width: 1024px) { }
+
+    width: 90%;
+    margin: 50px auto;
+    a{
+        margin: 0 20px 20px;
+    }
+`;

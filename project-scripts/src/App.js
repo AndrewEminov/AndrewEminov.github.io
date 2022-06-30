@@ -13,6 +13,8 @@ import TypesClothesStepTwo from './pages/TypesClothesStepTwo';
 import TypesClothesFinish from './pages/TypesClothesFinish';
 import CurrentTypeClothStepTwo from './pages/CurrentTypeClothStepTwo';
 import CurrentTypeClothStepOne from './pages/CurrentTypeClothStepOne';
+import DifficultyGroups from './pages/DifficultyGroups';
+import CurrentDifficultyGroup from './pages/CurrentDifficultyGroup';
 import Header from "./components/Header";
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<TypesClothesMain/>}/>
+        <Route exact path="/types-clothes/difficulty-groups" element={<DifficultyGroups/>}/>
+        <Route exact path="/types-clothes/difficulty-groups/:id" element={<CurrentDifficultyGroup/>}/>
         <Route exact path="/types-clothes/step1" element={<TypesClothesStepOne/>}/>
         <Route exact path="/types-clothes/step1/:id" element={<CurrentTypeClothStepOne/>}/>
         <Route exact path="/types-clothes/step2" element={<TypesClothesStepTwo/>}/>

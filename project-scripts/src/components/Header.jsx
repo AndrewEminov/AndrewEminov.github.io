@@ -40,6 +40,7 @@ const Header = () => {
                   </label>                  
                   <Menu className="menu" onClick={() => setOpen(false)} >
                       <LinkExtends to={"/"}>главная</LinkExtends>
+                      <LinkExtends to={"/types-clothes/difficulty-groups"}>группы сложности</LinkExtends>
                       <LinkExtends to={"/types-clothes/step1"}>группы ткани</LinkExtends>
                       <LinkExtends to={"/types-clothes/step2"}>усложняющих элементы</LinkExtends>
                       <LinkExtends to={"/types-clothes/finish"}>финальный подсчет</LinkExtends>                    
@@ -57,7 +58,7 @@ const MenuWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  @media(min-width: 700px){
+  @media(min-width: 900px){
     flex-direction: row-reverse;
 
     button{
@@ -117,7 +118,7 @@ const Wrapper = styled.div`
   .menu > a {
     margin: 0 1rem;
 
-    @media(min-width: 700px){
+    @media(min-width: 900px){
       font-size: 14px;
       margin: 0 12px;
     }
@@ -179,7 +180,7 @@ const Wrapper = styled.div`
     `}
 }
     
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .menu-button-container {
       display: flex;
     }
