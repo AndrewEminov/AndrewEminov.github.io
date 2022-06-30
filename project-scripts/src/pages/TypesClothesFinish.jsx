@@ -11,12 +11,13 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
     const [ currency, setCurrency ] = useState(0);
     const [ sum, setSum ] = useState(0);
     const [ error, setError ] = useState(false);
+    const sumCElements = currentCElements.reduce((sum, { value }) => sum + value, 0);
 
     const handleGetResult = () => {
         if(cloth.data.value){
             setError(false);
 
-            const sum = ((CElement.data.value || 0) * currentCElements.length + cloth.data.value) * currency;
+            const sum = ((CElement.data.value || 0) * sumCElements + cloth.data.value) * currency;
             setSum(sum);
         }else{
             setError(true);
@@ -30,7 +31,7 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
             <InfoWrapper>
                 <span>Кол-во условных единиц: {cloth.data.value}</span>
                 <span>Коэффициент сложности: {CElement.data.value || 0}</span>
-                <span>Кол-во усложняющий элементов: {currentCElements.length}</span>
+                <span>Кол-во усложняющий элементов: {sumCElements}</span>
                 <span>
                     Стоимость: 
                     <EnterPrice
