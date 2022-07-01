@@ -6,7 +6,8 @@ import {
     SET_FEW_CELEMENTS,
     SET_CURRENT_CELEMENTS,
     SET_TABLE_CLOTHES,
-    SET_INIT_DATA
+    SET_INIT_DATA,
+    SET_CURRENT_DATA_AD
 } from './actionTypes'
 
 const initValue = {
@@ -28,10 +29,13 @@ const initValue = {
     CElementsTitle: '',
     currentCElements: [],
     CElementsId: null,
+    currentDataAD: []
 }
 
 export default (state = initValue, action) => {
     switch (action.type) {
+      case SET_CURRENT_DATA_AD: 
+        return {...state, currentDataAD: action.payload};
       case SET_INIT_DATA:
         return {...state, ...initValue};
       case SET_TABLE_CLOTHES: 

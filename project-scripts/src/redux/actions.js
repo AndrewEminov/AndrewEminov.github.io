@@ -7,8 +7,14 @@ import {
     SET_FEW_CELEMENTS,
     SET_CURRENT_CELEMENTS,
     SET_TABLE_CLOTHES,
-    SET_INIT_DATA
+    SET_INIT_DATA,
+    SET_CURRENT_DATA_AD
 } from './actionTypes'
+
+export const setCurrentDataAD = (dataAD={}) => ({
+    type: SET_CURRENT_DATA_AD,
+    payload: dataAD,
+})
 
 export const setTitleTypeClothes = (title) => ({
     type: SET_TITLE_CLOTHES_TYPE,

@@ -40,6 +40,7 @@ const Header = () => {
                   </label>                  
                   <Menu className="menu" onClick={() => setOpen(false)} >
                       <LinkExtends to={"/"}>главная</LinkExtends>
+                      <LinkExtends to={"/types-clothes/allowances-and-discounts"}>надбавки и скидки</LinkExtends>
                       <LinkExtends to={"/types-clothes/difficulty-groups"}>группы сложности</LinkExtends>
                       <LinkExtends to={"/types-clothes/step1"}>группы ткани</LinkExtends>
                       <LinkExtends to={"/types-clothes/step2"}>усложняющих элементы</LinkExtends>

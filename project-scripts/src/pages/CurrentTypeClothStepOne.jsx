@@ -30,14 +30,10 @@ function CurrentTypeClothStepOne({
         // if complicating elements is only one
         if(table.dataCElements[id] && !table.complicatingElements.length){
             setCElement({key: 0, data: table.dataCElements[id][0]})
-        }else{
-            setCElement({key: null, data: {}})
         }
     }, []);
     
     const handleChooseCloth = (key, text) => {
-        // console.log(key, text, currentGoup);
-
         setCloth({key, data: { ...currentGoup.cloths[key], text }})
     }
 

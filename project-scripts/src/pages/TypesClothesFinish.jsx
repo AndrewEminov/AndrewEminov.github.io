@@ -4,26 +4,35 @@ import HeaderText from '../components/HeaderText';
 import { Btn } from '../components/Btns';
 import styled from 'styled-components/macro';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 
 const BtnStyles = { padding: '5px 13px', fontSize: '16px'};
 
-function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
+function TypesClothesFinish ({ CElement, currentCElements, cloth, currentDataAD }) {
     const [ currency, setCurrency ] = useState(0);
     const [ sum, setSum ] = useState(0);
     const [ error, setError ] = useState(false);
-    const sumCElements = currentCElements.reduce((sum, { value }) => sum + value, 0);
+
+    let sumCElements = currentCElements.reduce((sum, { value }) => sum + value, 0);
+    let sumDataAD = currentDataAD.reduce((sum, { discount, value }) => discount ? sum - value : sum + value, 0);
+
+    currentDataAD.map((data) => <li key={data.id}>{data.title}</li> )
 
     const handleGetResult = () => {
         if(cloth.data.value){
             setError(false);
 
             const sum = ((CElement.data.value || 0) * sumCElements + cloth.data.value) * currency;
-            setSum(sum);
+            sumDataAD = sumDataAD/100 * sum;
+
+            setSum(sum + sumDataAD);
         }else{
             setError(true);
         }
         
     }
+
+    const linkAllowancesDiscount = <LinkExtends to={"/types-clothes/allowances-and-discounts"}>Выбрать?</LinkExtends>
 
     return (
         <Wrapper>
@@ -32,6 +41,12 @@ function TypesClothesFinish ({ CElement, currentCElements, cloth }) {
                 <span>Кол-во условных единиц: {cloth.data.value}</span>
                 <span>Коэффициент сложности: {CElement.data.value || 0}</span>
                 <span>Кол-во усложняющий элементов: {sumCElements}</span>
+
+                <div>
+                    <span>Кол-во надбавок, скидок: {!currentDataAD.length && linkAllowancesDiscount} </span>
+                    <ul>{currentDataAD.map((data) => <li key={data.id}>{data.title}</li>)}</ul>
+                </div>
+
                 <span>
                     Стоимость: 
                     <EnterPrice
@@ -66,6 +81,7 @@ const mapStateToProps = (store) => {
         CElement: store.commonReducer.CElement,  
         currentCElements: store.commonReducer.currentCElements,
         CElementList: store.commonReducer.CElementList,
+        currentDataAD: store.commonReducer.currentDataAD,
     }
   }
 
@@ -87,6 +103,11 @@ const Wrapper = styled.div`
 
     }
 
+`;
+
+const LinkExtends = styled(Link)`
+    padding-left: 5px;
+    font-size: 14px;
 `;
 
 const InfoWrapper = styled.div`

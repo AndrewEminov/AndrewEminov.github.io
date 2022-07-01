@@ -9,8 +9,8 @@ import { Btn } from '../components/Btns';
 
 const BtnStyles = { padding: '5px 13px', fontSize: '15px'};
 
-const NavBar = ({title, step, cloth, CElement, currentCElements, navBarIsOpen, setNavBarIsOpen}) => {
-    const NavBarIsNotEmpty = cloth.key !== null || CElement.key !== null || currentCElements.length;
+const NavBar = ({currentDataAD, title, step, cloth, CElement, currentCElements, navBarIsOpen, setNavBarIsOpen}) => {
+    const NavBarIsNotEmpty = cloth.key !== null || CElement.key !== null || currentCElements.length || currentDataAD.length;
     
     return (
         <Wrapper navBarIsOpen={navBarIsOpen}>
@@ -52,6 +52,21 @@ const NavBar = ({title, step, cloth, CElement, currentCElements, navBarIsOpen, s
                         </CElementsWrap>
                     </>
                     }
+
+                    {!!currentDataAD.length &&
+                        <>
+                            <h1>Перечень особенностей изготовления швейных изделий</h1>
+                            <ul>
+                                {currentDataAD.map((element) => 
+                                    <li>
+                                        <LinkExtends onClick={() => setNavBarIsOpen(false)} to={`/types-clothes/allowances-and-discounts`}>
+                                            {element.title}
+                                        </LinkExtends>
+                                    </li>
+                                )}
+                            </ul>
+                        </>
+                    }
                     </>
                     : 
                         <div>
@@ -73,6 +88,7 @@ const mapStateToProps = (store) => {
         CElement: store.commonReducer.CElement,  
         currentCElements: store.commonReducer.currentCElements,
         CElementList: store.commonReducer.CElementList,
+        currentDataAD: store.commonReducer.currentDataAD,
     }
   }
 
